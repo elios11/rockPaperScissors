@@ -1,18 +1,53 @@
 <!DOCTYPE html>
 <script>
+    let computerSelection;
+    let playerSelection;
+    let computerScore = 0;
+    let playerScore = 0;
     const options = ["rock", "paper", "scissors"];
-//Create a function that randomly returns between Rock Paper and Scissors for the computer
-//   pickrandom(rock, paper, scissors)
 
+//Create a function that randomly returns between Rock Paper and Scissors for the computer
     function computerPick(){
-        let computerSelection = Math.floor(Math.random()*options.length);
+        computerSelection = Math.floor(Math.random()*options.length);
         return options[computerSelection];
     }
+
 //Get and input of playerSelection
-//    insensitive case input("Pick your choice: ");
-    let playerSelection = window.prompt("Pick your play: ").toLowerCase();
+    playerSelection = window.prompt("Pick your play: ").toLowerCase();
+
 //Create a function that plays a single round of the game
-//    take playerSelection and computerSelection to play against each other
-//        return a string that shows who is the winner and why
+    function playRound(computerSelection, playerSelection){
+        if (computerPick() == playerSelection){
+            console.log("It's a tie!");
+        }
+        else if (computerPick() == "rock" || playerSelection == "scissors"){
+            console.log("You Lose! Rock beats Scissors!");
+            computerScore++;
+        }
+        else if (computerPick() == "paper" || playerSelection == "rock"){
+            console.log("You Lose! Paper beats Rock!");
+            computerScore++;
+        }
+        else if (computerPick() == "scissors" || playerSelection == "paper"){
+            console.log("You Lose! Scissors beat Paper!");
+            computerScore++;
+        }
+        else if (computerPick() == "rock" || playerSelection == "paper"){
+            console.log("You Win! Paper beats Rock!")
+            playerScore++;
+        }
+        else if (computerPick() == "paper" || playerSelection == "scissors"){
+            console.log("You Win! Scissors beat Paper!");
+            playerScore++;
+        }
+        else if (computerPick() == "scissors" || playerSelection == "rock"){
+            console.log("You Win! Rock beats Scissors!");
+            playerScore++;
+        }
+    }
+    playRound();
+    console.log("Player Score: "+playerScore);
+    console.log("Computer Score: "+computerScore);
+
 //Create a function called game that plays the game 5 times, and output the winner of the whole game
 </script>
