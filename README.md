@@ -4,3 +4,4 @@ What I learned until this point:
   - How to properly divide functions
   - The importance of parameters
   - Use of Math-random function
+  - Separation of html, css, and javascript files
