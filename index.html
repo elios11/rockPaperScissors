@@ -2,19 +2,30 @@
 <html>
 
 <head>
-    <link rel="shortcut icon" type="image/x-icon" href="favicon.jpg">
-    <title>Rock-Paper-Scissors!</title>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width = device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie = edge">
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.jpg">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Rock-Paper-Scissors!</title>
+    
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Work+Sans:wght@300&display=swap"
+     rel="stylesheet">
 </head>
 
 <body>
+    <h1>Try your luck on getting to 5 points before the computer!</h1>
     <div class="playingButtons">
-        <button id="rock">Rock</button>
-        <button id="paper">Paper</button>
-        <button id="scissors">Scissors</button>
+        <button class="allButtons" id="rock">Rock</button>
+        <button class="allButtons" id="paper">Paper</button>
+        <button class="allButtons" id="scissors">Scissors</button>
+    </div>
+    <div class="playingText">
+        <div id="resultsText">Results: </div>
         <div id="gameText"></div>
-        <div id="results">Results: </div>
+        <div id="results"></div>
     </div>
 
 <script type="text/javascript" src="javascript.js"></script>
