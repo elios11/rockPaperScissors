@@ -1,0 +1,56 @@
+body 
+{
+    background-image: url("background-picture.jpg")
+}
+h1 
+{
+    padding-top: 50px;
+    text-align: center;
+    width: 70%;
+    margin: 0 auto;
+    color: white;
+    font-family: 'Open Sans', sans-serif;
+}
+.playingButtons 
+{
+    padding: 50px 0px 50px 0px;
+    text-align: center;
+    width: 70%;
+    margin: 0 auto;
+}
+.allButtons
+{
+    font-weight: 500;
+    font-family: 'Work Sans', sans-serif;
+    height: 70px;
+    width: 200px;
+    font-size: 40px;
+    color: black;
+    background-color: fuchsia;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+}
+.playingText
+{
+    width: 90%;
+    margin: 0 auto;
+    font-size: 20px;
+    font-family: 'Quicksand', sans-serif;
+    color: white;
+    text-align: center;
+    
+}
+#resultsText{
+    padding-bottom: 20px;
+    font-weight: bold;
+    font-size: 38px;
+    font-family: 'Open Sans', sans-serif;
+}
+#gameText
+{
+    font-size: 28px;
+    font-weight: 550;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
