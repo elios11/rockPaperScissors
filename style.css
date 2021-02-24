@@ -1,8 +1,10 @@
 body 
 {
-    background-image: url("background-picture.jpg")
+    background-image: url("background-picture.jpg");
 }
-h1 
+img { max-width: 100%; }
+
+h1
 {
     padding-top: 50px;
     text-align: center;
@@ -10,10 +12,29 @@ h1
     margin: 0 auto;
     color: white;
     font-family: 'Open Sans', sans-serif;
+    font-size: 50px;
+}
+h2 
+{
+    padding-top: 50px;
+    text-align: center;
+    width: 70%;
+    margin: 0 auto;
+    color: rgb(209, 195, 195);
+    font-family: 'Open Sans', sans-serif;
+}
+h3
+{
+    padding-bottom: 20px;
+    text-align: center;
+    width: 70%;
+    margin: 0 auto;
+    color: rgb(247, 156, 156);
+    font-family: 'Open Sans', sans-serif;
 }
 .playingButtons 
 {
-    padding: 50px 0px 50px 0px;
+    padding: 50px 0px 20px 0px;
     text-align: center;
     width: 70%;
     margin: 0 auto;
@@ -28,7 +49,7 @@ h1
     color: black;
     background-color: fuchsia;
     text-decoration: none;
-    border: none;
+    border: 1px solid black;
     cursor: pointer;
 }
 .playingText
@@ -42,15 +63,16 @@ h1
     
 }
 #resultsText{
-    padding-bottom: 20px;
+    padding-bottom: 0px;
     font-weight: bold;
     font-size: 38px;
     font-family: 'Open Sans', sans-serif;
+    color: rgb(209, 195, 195);
 }
 #gameText
 {
     font-size: 28px;
     font-weight: 550;
-    padding-top: 20px;
+    padding-top: 10px;
     padding-bottom: 20px;
 }
