@@ -1,7 +1,9 @@
 # rockPaperScissors
-Console game (ATM) of Rock-Paper-Scissors  
-
-What I learned until this point:
+## [**Rock-Paper-Scissors demo**](https://elios11.github.io/rockPaperScissors/)
+----
+#### This is a JavaScript game made for the curriculum of "The Odin Project"
+----
+What I learned from this project:
 
   - How to properly divide functions
   - The importance of parameters
