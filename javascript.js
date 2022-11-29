@@ -3,11 +3,20 @@ let computerSelection;
 let computerScore = 0;
 let playerScore = 0;
 let winningScore;
+
+const rockButton = document.querySelector("#rock");
+const paperButton = document.querySelector("#paper");
+const scissorsButton = document.querySelector("#scissors");
+
 const options = ["rock", "paper", "scissors"];
+
 const computerSelectionBox = document.getElementById("computerSelection");
 const results = document.getElementById("results");
 const restartBtn = document.getElementById("restartBtn");
 const gameText = document.querySelector("#gameText");
+
+//Add playing event listeners to the game buttons
+allowPlaying();
 
 //Create a function that randomly returns between Rock Paper and Scissors for the computer
 function computerPick(){
@@ -55,43 +64,47 @@ function playGame()
     if (playerScore == 5) 
     {
         gameText.textContent = "Congratulations! You won.";
-        rockButton.removeEventListener("click", playRock);
-        paperButton.removeEventListener("click", playPaper);
-        scissorsButton.removeEventListener("click", playScissors);
+        disallowPlaying();
     }
     else if (computerScore == 5)
     {
-        gameText.textContent = "You lost :(. Better luck next time!";
-        rockButton.removeEventListener("click", playRock);
-        paperButton.removeEventListener("click", playPaper);
-        scissorsButton.removeEventListener("click", playScissors);
+        gameText.textContent = "You lost... Better luck next time!";
+        disallowPlaying();
     }
 }
 
-const rockButton = document.querySelector("#rock");
-const paperButton = document.querySelector("#paper");
-const scissorsButton = document.querySelector("#scissors");
-
-//Button to play a round of the game with rock as playerSelection
-function playRock() 
-{
-    playRound("rock");
+//Play a round with the user choice
+function selectPlayingChoice(choice) {
+    playRound(choice);
 }
-rockButton.addEventListener("click", playRock);
 
-//Button to play a round of the game with paper as playerSelection
-function playPaper() 
-{
-    playRound("paper");
-}
-paperButton.addEventListener("click", playPaper);
+function allowPlaying() {
+    rockButton.addEventListener("click", () => {
+        playRound("rock")
+    });
 
-//Button to play a round of the game with scissors as playerSelection
-function playScissors() 
-{
-    playRound("scissors");
+    paperButton.addEventListener("click", () => {
+        playRound("paper")
+    });
+
+    scissorsButton.addEventListener("click", () => {
+        playRound("scissors")
+    });
 }
-scissorsButton.addEventListener("click", playScissors);
+
+function disallowPlaying() {
+    rockButton.removeEventListener("click", () => {
+        playRound("rock")
+    });
+
+    paperButton.removeEventListener("click", () => {
+        playRound("paper")
+    });
+    
+    scissorsButton.removeEventListener("click", () => {
+        playRound("scissors")
+    });
+}
 
 function restartGame() {
     computerScore = 0;
@@ -99,7 +112,9 @@ function restartGame() {
     computerSelectionBox.textContent = "";
     gameText.textContent = "The game has been restarted!";
     results.textContent = `Player Score: ${playerScore} - Computer Score: ${computerScore}`;
+    allowPlaying();
 }
+
 restartBtn.addEventListener("click", () => {
     restartGame();
 })
