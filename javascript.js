@@ -4,7 +4,9 @@ let computerScore = 0;
 let playerScore = 0;
 let winningScore;
 const options = ["rock", "paper", "scissors"];
-
+const computerSelectionBox = document.getElementById("computerSelection");
+const results = document.getElementById("results");
+const restartBtn = document.getElementById("restartBtn");
 const gameText = document.querySelector("#gameText");
 
 //Create a function that randomly returns between Rock Paper and Scissors for the computer
@@ -42,7 +44,7 @@ function playRound(playerSelection) {
         gameText.textContent = "You Win! Rock beats Scissors!";
         playerScore++;
     }
-    computerSText.textContent = `Computer Selection: ${computerSelection}`;
+    computerSelectionBox.textContent = `Computer Selection: ${computerSelection}`;
     results.textContent = `Player Score: ${playerScore} - Computer Score: ${computerScore}`;
     playGame();
 }
@@ -91,7 +93,13 @@ function playScissors()
 }
 scissorsButton.addEventListener("click", playScissors);
 
-const computerSText = document.querySelector(".computerS");
-
-//Displays the current scores of the player and the computer
-const results = document.querySelector("#results");
+function restartGame() {
+    computerScore = 0;
+    playerScore = 0;
+    computerSelectionBox.textContent = "";
+    gameText.textContent = "The game has been restarted!";
+    results.textContent = `Player Score: ${playerScore} - Computer Score: ${computerScore}`;
+}
+restartBtn.addEventListener("click", () => {
+    restartGame();
+})
