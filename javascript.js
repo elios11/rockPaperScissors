@@ -3,6 +3,7 @@ let computerSelection;
 let computerScore = 0;
 let playerScore = 0;
 let winningScore;
+let gameEnded = false;
 
 const rockButton = document.querySelector("#rock");
 const paperButton = document.querySelector("#paper");
@@ -64,51 +65,47 @@ function playGame()
     if (playerScore == 5) 
     {
         gameText.textContent = "Congratulations! You won.";
-        disallowPlaying();
+        gameEnded = true;
     }
     else if (computerScore == 5)
     {
         gameText.textContent = "You lost... Better luck next time!";
-        disallowPlaying();
+        gameEnded = true;
     }
 }
 
-//Play a round with the user choice
-function selectPlayingChoice(choice) {
-    playRound(choice);
-}
-
+//Add and remove event listener for playing a round with user choice
 function allowPlaying() {
-    rockButton.addEventListener("click", () => {
-        playRound("rock")
+    rockButton.addEventListener("click", function handler() {
+        if (gameEnded) {
+            this.removeEventListener("click", handler);
+            return false;
+        }
+        playRound("rock");
     });
 
-    paperButton.addEventListener("click", () => {
-        playRound("paper")
+    paperButton.addEventListener("click", function handler() {
+        if (gameEnded) {
+            this.removeEventListener("click", handler);
+            return false;
+        }
+        playRound("paper");
     });
 
-    scissorsButton.addEventListener("click", () => {
-        playRound("scissors")
-    });
-}
+    scissorsButton.addEventListener("click", function handler() {
+        if (gameEnded) {
+            this.removeEventListener("click", handler);
+            return false;
+        }
 
-function disallowPlaying() {
-    rockButton.removeEventListener("click", () => {
-        playRound("rock")
-    });
-
-    paperButton.removeEventListener("click", () => {
-        playRound("paper")
-    });
-    
-    scissorsButton.removeEventListener("click", () => {
-        playRound("scissors")
+        playRound("scissors");
     });
 }
 
 function restartGame() {
     computerScore = 0;
     playerScore = 0;
+    gameEnded = false;
     computerSelectionBox.textContent = "";
     gameText.textContent = "The game has been restarted!";
     results.textContent = `Player Score: ${playerScore} - Computer Score: ${computerScore}`;
