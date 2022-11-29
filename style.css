@@ -1,46 +1,40 @@
-body 
-{
-    background-image: url("background-picture.jpg");
+body {
+    background-image: url("background-picture.svg");
+    min-height: 100vh;
 }
-img { max-width: 100%; }
 
-h1
-{
-    padding-top: 50px;
+.gameContent {
+    margin-bottom: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.pageTitle {
+    margin-top: 80px;
     text-align: center;
-    width: 70%;
-    margin: 0 auto;
-    color: white;
+    color: rgb(0, 0, 0);
     font-family: 'Open Sans', sans-serif;
     font-size: 50px;
+    text-shadow: 2px 2px rgb(16, 3, 201);
 }
-h2 
-{
-    padding-top: 50px;
+
+.pageSubtitle {
     text-align: center;
-    width: 70%;
-    margin: 0 auto;
-    color: rgb(209, 195, 195);
+    text-align: center;
+    color: rgb(56, 56, 56);
     font-family: 'Open Sans', sans-serif;
 }
-h3
-{
-    padding-bottom: 20px;
+
+#computerSelection {
+    margin: 20px 0;
     text-align: center;
     width: 70%;
-    margin: 0 auto;
-    color: rgb(247, 156, 156);
+    color: rgb(126, 7, 7);
     font-family: 'Open Sans', sans-serif;
 }
-.playingButtons 
-{
-    padding: 50px 0px 20px 0px;
-    text-align: center;
-    width: 70%;
-    margin: 0 auto;
-}
-.allButtons
-{
+
+.gameButton {
     font-weight: 500;
     font-family: 'Work Sans', sans-serif;
     height: 70px;
@@ -49,30 +43,56 @@ h3
     color: black;
     background-color: fuchsia;
     text-decoration: none;
-    border: 1px solid black;
+    box-shadow: 2px 2px rgb(8, 82, 194);
     cursor: pointer;
 }
-.playingText
-{
+
+#restartBtn {
+    background-color: crimson;
+    box-shadow: 2px 2px rgb(163, 12, 233);
+    border-radius: 12px;
+    margin: 30px 0;
+}
+
+.gameButton:active, #restartBtn:active {
+    box-shadow: 0 0;
+    transform: translate(2px, 2px);
+}
+
+.playingText {
     width: 90%;
     margin: 0 auto;
     font-size: 20px;
     font-family: 'Quicksand', sans-serif;
-    color: white;
+    color: rgb(56, 42, 42);
     text-align: center;
-    
 }
-#resultsText{
-    padding-bottom: 0px;
+
+#resultsText {
     font-weight: bold;
     font-size: 38px;
     font-family: 'Open Sans', sans-serif;
-    color: rgb(209, 195, 195);
+    color: rgb(0, 60, 83);
 }
-#gameText
-{
+
+#results {
+    font-size: 25px;
+}
+
+#gameText {
+    color: rebeccapurple;
     font-size: 28px;
     font-weight: 550;
     padding-top: 10px;
     padding-bottom: 20px;
+}
+
+#rock {
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+}
+
+#scissors {
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
 }
