@@ -66,40 +66,43 @@ function playGame()
     {
         gameText.textContent = "Congratulations! You won.";
         gameEnded = true;
+        disallowPlaying();
     }
     else if (computerScore == 5)
     {
         gameText.textContent = "You lost... Better luck next time!";
         gameEnded = true;
+        disallowPlaying();
     }
 }
 
-//Add and remove event listener for playing a round with user choice
+//Button to play a round of the game with rock as playerSelection
+function playRock() {
+    playRound("rock");
+}
+
+//Button to play a round of the game with paper as playerSelection
+function playPaper() {
+    playRound("paper");
+}
+
+//Button to play a round of the game with scissors as playerSelection
+function playScissors() {
+    playRound("scissors");
+}
+
+//Add event listeners to buttons to play a round 
 function allowPlaying() {
-    rockButton.addEventListener("click", function handler() {
-        if (gameEnded) {
-            this.removeEventListener("click", handler);
-            return false;
-        }
-        playRound("rock");
-    });
+    rockButton.addEventListener("click", playRock);
+    paperButton.addEventListener("click", playPaper);
+    scissorsButton.addEventListener("click", playScissors);
+}
 
-    paperButton.addEventListener("click", function handler() {
-        if (gameEnded) {
-            this.removeEventListener("click", handler);
-            return false;
-        }
-        playRound("paper");
-    });
-
-    scissorsButton.addEventListener("click", function handler() {
-        if (gameEnded) {
-            this.removeEventListener("click", handler);
-            return false;
-        }
-
-        playRound("scissors");
-    });
+//Remove event listener to play a round from buttons
+function disallowPlaying() {
+    rockButton.removeEventListener("click", playRock);
+    paperButton.removeEventListener("click", playPaper);
+    scissorsButton.removeEventListener("click", playScissors);
 }
 
 function restartGame() {
