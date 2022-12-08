@@ -10,6 +10,10 @@ body {
     align-items: center;
 }
 
+.playButton {
+    display: flex;
+}
+
 .pageTitle {
     margin-top: 80px;
     text-align: center;
@@ -95,4 +99,22 @@ body {
 #scissors {
     border-top-right-radius: 15px;
     border-bottom-right-radius: 15px;
+}
+
+@media (max-width: 576px) {
+    .playButton {
+        flex-direction: column;
+    }
+
+    #rock {
+        border-top-left-radius: 15px;
+        border-top-right-radius: 15px;
+        border-bottom-left-radius: 0;
+    }
+    
+    #scissors {
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 15px;
+        border-bottom-left-radius: 15px;
+    }
 }
