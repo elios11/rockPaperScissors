@@ -1,6 +1,10 @@
 body {
     background-image: url("background-picture.svg");
     min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .gameContent {
@@ -15,25 +19,21 @@ body {
 }
 
 .pageTitle {
-    margin-top: 80px;
     text-align: center;
-    color: rgb(0, 0, 0);
+    color: #40376E;
     font-family: 'Open Sans', sans-serif;
-    font-size: 50px;
-    text-shadow: 2px 2px rgb(16, 3, 201);
+    font-size: 2.3rem;
 }
 
 .pageSubtitle {
-    text-align: center;
     text-align: center;
     color: rgb(56, 56, 56);
     font-family: 'Open Sans', sans-serif;
 }
 
 #computerSelection {
-    margin: 20px 0;
+    margin: 1.5rem 0;
     text-align: center;
-    width: 70%;
     color: rgb(126, 7, 7);
     font-family: 'Open Sans', sans-serif;
 }
@@ -41,9 +41,9 @@ body {
 .gameButton {
     font-weight: 500;
     font-family: 'Work Sans', sans-serif;
-    height: 70px;
-    width: 200px;
-    font-size: 40px;
+    height: 4rem;
+    width: 10rem;
+    font-size: 1.5rem;
     color: black;
     background-color: fuchsia;
     text-decoration: none;
@@ -64,9 +64,7 @@ body {
 }
 
 .playingText {
-    width: 90%;
-    margin: 0 auto;
-    font-size: 20px;
+    font-size: 1.5rem;
     font-family: 'Quicksand', sans-serif;
     color: rgb(56, 42, 42);
     text-align: center;
@@ -116,5 +114,35 @@ body {
         border-top-right-radius: 0;
         border-bottom-right-radius: 15px;
         border-bottom-left-radius: 15px;
+    }
+}
+
+@media (min-width: 976px) {
+    html {
+        font-size: 18px;
+    }
+}
+
+@media (min-width: 1200px) {
+    html {
+        font-size: 20px;
+    }
+}
+
+@media (min-width: 1600px) {
+    html {
+        font-size: 26px;
+    }
+}
+
+@media (min-width: 2400px) {
+    html {
+        font-size: 35px;
+    }
+}
+
+@media (min-width: 3000px) {
+    html {
+        font-size: 45px;
     }
 }
